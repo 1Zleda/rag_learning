@@ -34,34 +34,23 @@
 
 
 
-\## 🏗️ 系统架构
-'mermaid
+## 🏗️ 系统架构
+
+ '''mermaid
 graph TD
+    A[用户提问 /ask] --> B(FastAPI 后端接口)
+    B --> C{LangChain 检索链}
+    C -->|1. 问题向量化| D[智谱 Embedding API]
+    D -->|2. 向量检索| E[(Chroma 向量数据库)]
+    E -->|3. 返回相关文本块| C
+    C -->|4. 拼接上下文与Prompt| F[智谱 GLM-4 大模型]
+    F -->|5. 生成回答| B
+    B --> G[返回 JSON 答案]
 
-&#x20;   A\[用户提问 /ask] --> B(FastAPI 后端接口)
-
-&#x20;   B --> C{LangChain 检索链}
-
-&#x20;   C -->|1. 问题向量化| D\[智谱 Embedding API]
-
-&#x20;   D -->|2. 向量检索| E\[(Chroma 向量数据库)]
-
-&#x20;   E -->|3. 返回相关文本块| C
-
-&#x20;   C -->|4. 拼接上下文与Prompt| F\[智谱 GLM-4 大模型]
-
-&#x20;   F -->|5. 生成回答| B
-
-&#x20;   B --> G\[返回 JSON 答案]
-
-&#x20;
-
-&#x20;   style A fill:#f9f,stroke:#333,stroke-width:2px
-
-&#x20;   style G fill:#f9f,stroke:#333,stroke-width:2px
-
-&#x20;   style E fill:#bbf,stroke:#333,stroke-width:2px
-
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#bbf,stroke:#333,stroke-width:2px
+'''
 
 
 \## 🎬 演示效果
