@@ -35,7 +35,7 @@
 
 
 \## 🏗️ 系统架构
-
+'mermaid
 graph TD
 
 &#x20;   A\[用户提问 /ask] --> B(FastAPI 后端接口)
