@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from langchain_community.vectorstores import Chroma
-from zhipu_embeddings import ZhipuEmbeddings
+from src.zhipu_embeddings import ZhipuEmbeddings
 import os
 import requests
 from dotenv import load_dotenv
