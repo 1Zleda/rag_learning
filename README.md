@@ -35,27 +35,11 @@
 
 
 ## 🏗️ 系统架构
-
- '''mermaid
-graph TD
-    A[用户提问 /ask] --> B(FastAPI 后端接口)
-    B --> C{LangChain 检索链}
-    C -->|1. 问题向量化| D[智谱 Embedding API]
-    D -->|2. 向量检索| E[(Chroma 向量数据库)]
-    E -->|3. 返回相关文本块| C
-    C -->|4. 拼接上下文与Prompt| F[智谱 GLM-4 大模型]
-    F -->|5. 生成回答| B
-    B --> G[返回 JSON 答案]
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style G fill:#f9f,stroke:#333,stroke-width:2px
-    style E fill:#bbf,stroke:#333,stroke-width:2px
-'''
-
+![系统架构图](docs/arch.png)
 
 \## 🎬 演示效果
 
-!\[接口调用演示]（docs/demo.png）
+![接口调用演示]（docs/demo.png）
 
 
 
