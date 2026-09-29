@@ -39,7 +39,7 @@
 
 \## 🎬 演示效果
 
-![接口调用演示]（docs/demo.png）
+![接口调用演示](docs/demo.png)
 
 
 
